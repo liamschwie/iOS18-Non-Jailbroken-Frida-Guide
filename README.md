@@ -35,3 +35,24 @@ Apple has restricted global pip installs, and dependency mismatches are common. 
 ### 1. Install the JIT Server
 ```bash
 sudo pip3 install SideJITServer --break-system-packages
+```
+
+---
+
+## 🔓 Step 2: Prepare the IPA
+
+If your app crashes immediately upon installation, it likely contains App Extensions (like Watch apps or Widgets) that mess up the signing process.
+
+### Change extension: Rename TargetApp.ipa -> TargetApp.zip.
+
+Unzip & Clean:
+• Open Payload/TargetApp.app.
+• Delete the Watch folder.
+Delete the PlugIns folder (if present).
+Re-zip:
+• Right-click the Payload folder -> Compress.
+• Rename Payload.zip -> FixedApp.ipa.
+
+
+
+
