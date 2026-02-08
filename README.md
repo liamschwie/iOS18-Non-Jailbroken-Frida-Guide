@@ -53,6 +53,26 @@ Re-zip:
 • Right-click the Payload folder -> Compress.
 • Rename Payload.zip -> FixedApp.ipa.
 
+## 💉 Step 3: Sideload & Inject
+
+1. Open Sideloadly.
+2. Drag your FixedApp.ipa into the window.
+3. Click Advanced Options.
+4. Under Inject Dylibs/Frameworks, add your frida-gadget-ios-universal.dylib.
+5. Important: Check "Remove limitation on supported devices" if available.
+6. Click Start.
+
+## 🚀 Step 4: The JIT Bypass
+
+This is the critical step. Sideloadly's "Enable JIT" button might fail on iOS 18. We use SideJITServer instead.
+
+### 1. Pair the Device
+Connect your device via USB and run:
+```bash
+sudo SideJITServer --pair
+```
+Trust the computer on your iOS device if prompted.
+
 
 
 
